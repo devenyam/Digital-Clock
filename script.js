@@ -45,9 +45,28 @@ const days = [
   "Saturday",
 ];
 
-function time() {
-  sec.innerText = `: ${new Date().getSeconds()}`;
-  min.innerText = `: ${new Date().getMinutes()}`;
-  hr.innerText = `${new Date().getHours()}`;
+function time(
+  secs = new Date().getSeconds(),
+  mins = new Date().getMinutes(),
+  hrs = new Date().getHours()
+) {
+  if (secs < 10) {
+    sec.innerText = `: 0${secs}`;
+  } else {
+    sec.innerText = `: ${secs}`;
+  }
+
+  if (mins < 10) {
+    min.innerText = `: 0${mins}`;
+  } else {
+    min.innerText = `: ${mins}`;
+  }
+
+  if (hrs < 10) {
+    hr.innerText = `0${hrs}`;
+  } else {
+    hr.innerText = `${hrs}`;
+  }
+
   day.innerText = days[new Date().getDay()];
 }
