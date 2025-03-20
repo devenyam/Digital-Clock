@@ -1,7 +1,5 @@
 "use strict";
 
-//alert(`Click on the button to show clock`);
-
 const clockButton = document.querySelector(".clock-button");
 
 const clock = document.querySelector(".clock");
